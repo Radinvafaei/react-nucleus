@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as yaml from 'js-yaml';
+import * as path from 'path';
 import { IConfig } from '@interfaces/config.interface';
 
 export default class BootstrapConfig {
@@ -64,14 +65,16 @@ export default class BootstrapConfig {
       },
     },
   };
-  static run(filePath: string = `.nucleus.yml`) {
-    if (fs.existsSync(filePath)) {
+  static run(filePath: string = `.nucleus.yml`): void {
+    const targetPath = path.resolve(process.cwd(), filePath);
+
+    if (fs.existsSync(targetPath)) {
       console.log(`✅ Configuration file "${filePath}" already exists.`);
       return;
     }
 
     const yamlContent = yaml.dump(this.defaultConfig);
-    fs.writeFileSync(filePath, yamlContent, `utf8`);
+    fs.writeFileSync(targetPath, yamlContent, `utf8`);
     console.log(`🚀 Created default configuration at "${filePath}"`);
   }
 }

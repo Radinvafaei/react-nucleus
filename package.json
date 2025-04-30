@@ -1,6 +1,6 @@
 {
   "name": "nucleus-ui-builder",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "author": {
     "name": "Radin Vafaei",
     "email": "radin.vafaei@icloud.com"
@@ -54,7 +54,7 @@
     "build:types": "tsc --emitDeclarationOnly --outDir dist/types"
   },
   "bin": "./dist/cjs/lib/index.js",
-  "private": false,
+  "files": ["dist","README.md", "LICENSE"],
   "keywords": [
     "design-system",
     "component-library",
