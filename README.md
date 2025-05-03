@@ -19,43 +19,50 @@
 ### Install Globally:
 
 ```sh
-npm install -g nucleus-ui-builder
+ npm install -g nucleus-ui-builder
 ```
 
 ```sh
-yarn global add nucleus-ui-builder
+ yarn global add nucleus-ui-builder
 ```
 
 ### Install Locally (for project-specific usage):
 
 ```sh
-npm install nucleus-ui-builder --save-dev
+ npm install nucleus-ui-builder --save-dev
 ```
 
 ```sh
-yarn add nucleus-ui-builder --dev
+ yarn add nucleus-ui-builder --dev
 ```
 
 ---
 
 ## 🚀 Usage
 
+### 🔧 Initialize Configuration
+Before scaffolding components, initialize the default configuration file:
+```sh
+ npx nucleus-init
+```
+
+
 ### Scaffold a New Component
 
 ```sh
-nucleus scaffold component Button in Atom Buttons storybook
+ nucleus scaffold component Button in Atom Buttons storybook
 ```
 
 ### Command Structure
 
 ```sh
-nucleus scaffold <templateName> <componentName> in <category> [subcategory] [extensions]
+ nucleus scaffold <templateName> <componentName> in <category> [subcategory] [extensions]
 ```
 
 ### Example:
 
 ```sh
-nucleus scaffold component Input in FormElements TextFields jest,storybook
+ nucleus scaffold component Input in FormElements TextFields jest,storybook
 ```
 
 This command will:

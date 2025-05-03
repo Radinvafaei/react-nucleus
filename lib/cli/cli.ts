@@ -21,6 +21,7 @@ export default class CLI {
         builder: this.scaffoldCommand.builder.bind(this.scaffoldCommand),
         handler: this.scaffoldCommand.handler.bind(this.scaffoldCommand),
       })
+      .completion(`completion`, `Generate completion script`)
       .demandCommand(3, `You need at least three commands before moving on`)
       .help()
       .parse();

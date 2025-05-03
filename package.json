@@ -1,6 +1,6 @@
 {
   "name": "nucleus-ui-builder",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": {
     "name": "Radin Vafaei",
     "email": "radin.vafaei@icloud.com"
@@ -46,14 +46,17 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "postinstall": "node ./dist/cjs/lib/bootstrap/bootstrap.config.js",
+    "postinstall": "nucleus completion > ~/.nucleus-completion && echo 'source ~/.nucleus-completion' >> ~/.bashrc || echo 'source ~/.nucleus-completion' >> ~/.zshrc",
     "build": "yarn build:swc && yarn build:types",
     "build:swc": "yarn build:esm && yarn build:cjs",
     "build:esm": "swc lib -d dist/esm --config-file .swcrc-esm --ignore lib/**/*.test.ts",
     "build:cjs": "swc ./lib -d dist/cjs --config-file .swcrc --ignore ./**/*.test.ts",
     "build:types": "tsc --emitDeclarationOnly --outDir dist/types"
   },
-  "bin": "./dist/cjs/lib/index.js",
+  "bin": {
+    "nucleus": "./dist/cjs/lib/index.js",
+    "nucleus-init": "./dist/cjs/lib/bootstrap/bootstrap.config.js"
+  },
   "files": ["dist","README.md", "LICENSE"],
   "keywords": [
     "design-system",
