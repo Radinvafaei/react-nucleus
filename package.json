@@ -1,6 +1,6 @@
 {
   "name": "nucleus-ui-builder",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": {
     "name": "Radin Vafaei",
     "email": "radin.vafaei@icloud.com"
@@ -55,7 +55,7 @@
   },
   "bin": {
     "nucleus": "./dist/cjs/lib/index.js",
-    "nucleus-init": "./dist/cjs/lib/bootstrap/bootstrap.config.js"
+    "nucleus-init": "./dist/cjs/lib/bootstrap/bootstrap.init.js"
   },
   "files": ["dist","README.md", "LICENSE"],
   "keywords": [
